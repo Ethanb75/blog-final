@@ -4,11 +4,20 @@
     <h1> Login Page</h1>
     <!--only difference in forms is where we are submitting the post to, /login or /register-->
     <form action="/login" method="POST">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit" value="Login!">
+        <div class="input-group">
+          <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+          <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="sizing-addon2">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+          <input type="password" class="form-control" name="password" placeholder="Password" aria-describedby="sizing-addon2">
+        </div>
+        <input class="btn btn-default" type="submit" value="Login">
     </form>
 </div>
+
+
+
 
 
 <% include ./partials/footer %>
