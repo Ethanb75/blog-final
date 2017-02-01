@@ -1,0 +1,23 @@
+/*body {*/
+/*    background-image: url("images/overlay.png"), linear-gradient(180deg, #3D9951 15%, #184D24 85%);*/
+/*}*/
+.navbar {
+    border-radius: 0;
+}
+.thumbnail {
+    padding: 0;
+    border-radius: 0px 0px 4px 4px;
+}
+.thumbnail img {
+    width: 100%;
+}
+.thumbnail .caption-full {
+    padding: 1em;
+}
+.editComment {
+    float: left;
+    margin-right: 10px;
+}
+.deleteForm {
+    display: inline;
+}

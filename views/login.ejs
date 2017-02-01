@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+
+<div class="text-center">
+    <h1> Login Page</h1>
+    <!--only difference in forms is where we are submitting the post to, /login or /register-->
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Login!">
+    </form>
+</div>
+
+
+<% include ./partials/footer %>
