@@ -57,6 +57,6 @@ app.use(indexRoutes);
 app.use("/posts", postRoutes);
 app.use("/posts/:id/comments", commentRoutes);
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Server is good");
 });
