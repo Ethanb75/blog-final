@@ -16,7 +16,7 @@ var commentRoutes = require("./routes/comments"),
     
 
 //dev db is local, production db is an mlab server
-var url = process.env.DATABASEURL || "mongodb://Ethan:fuck@ds121190.mlab.com:21190/ethans_blog";
+var url = process.env.DATABASEURL;
 mongoose.connect(url, function(err){
     if (err) throw err; 
 });
