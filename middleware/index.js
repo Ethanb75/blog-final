@@ -1,20 +1,20 @@
-var Campground= require("../models/campground");
+var Post= require("../models/post");
 var Comment = require("../models/comment");
 
 //all middleware
 var middlewareObj = {
     
-    checkCampOwnership: function (req,res,next){
+    checkPostOwnership: function (req,res,next){
         //is the user logged in? (authenticated)
         if (req.isAuthenticated()){
-            Campground.findById(req.params.id, function(err, foundCampground){
+            Post.findById(req.params.id, function(err, foundPost){
                 if(err){
-                    req.flash("error","Campground not found");
+                    req.flash("error","Post not found");
                     res.redirect("back");
                 } else {
-                    //does the user own the campground?
+                    //does the user own the post?
                     //need to use .equals method that comes with mongoose because one is an object and the other is a string lol
-                    if (foundCampground.author.id.equals(req.user._id)) {
+                    if (foundPost.author.id.equals(req.user._id)) {
                         next();
                         
                     } else {

@@ -1,2 +1,2 @@
-# Yelp-Camp-App
-go to https://warm-earth-23839.herokuapp.com/ for the running production
+# Blog Boilerplate
+A simple blog boilerplate made with node / express / mongodb on the backend and ejs as a front end templating language

@@ -24,8 +24,8 @@ router.post("/register",function(req, res) {
             //uses the local strategy to authenticate instead of twitter, facebook etc
             //this is technically logging the person in after they make a new account
             passport.authenticate("local")(req, res, function(){
-                req.flash("success","Welcome to YelpCamp " + user.username);
-               res.redirect("/campgrounds"); 
+                req.flash("success", "Welcome " + user.username);
+               res.redirect("/posts"); 
             });
         }
     })
@@ -41,7 +41,7 @@ router.get("/login", function(req, res) {
 //difference between register: We are doing a check first, and then giving access to a logged in page
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect: "/campgrounds",
+        successRedirect: "/posts",
         failureRedirect: "/login"
     }), function(req, res) {
 });
@@ -50,7 +50,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res) {
     req.logout();
     req.flash("success","Successfully logged out.")
-    res.redirect("/campgrounds")
+    res.redirect("/posts")
 });
 
 

@@ -6,18 +6,21 @@ var express        = require("express"),
     passport       = require('passport'),
     methodOverride = require("method-override"),
     LocalStrategy  = require("passport-local"),
-    Campground     = require("./models/campground"),
+    Post           = require("./models/post"),
     Comment        = require("./models/comment"),
-    User        = require('./models/user'),
-    seedDB      = require("./seeds");
+    User           = require('./models/user');
     
 var commentRoutes = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    postRoutes = require("./routes/posts"),
     indexRoutes = require("./routes/index");
     
 
 //dev db is local, production db is an mlab server
-mongoose.connect(process.env.DATABASEURL);
+// var url = process.env.DATABASEURL || "mongodb://Ethan:fuck@ds121190.mlab.com:21190/ethans_blog";
+// mongoose.connect(url);
+mongoose.connect("mongodb://Ethan:fuck@ds121190.mlab.com:21190/ethans_blog", function(err){
+    if (err) throw err; 
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -25,11 +28,10 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
-// seedDB();
 
 //Passport config
 app.use(require("express-session")({
-    secret: "Charles is adorable",
+    secret: "King Charles",
     resave: false,
     saveUninitialized: false
 }));
@@ -53,9 +55,9 @@ app.use(function(req,res,next){
 });
 
 app.use(indexRoutes);
-app.use("/campgrounds",campgroundRoutes);
-app.use("/campgrounds/:id/comments",commentRoutes);
+app.use("/posts", postRoutes);
+app.use("/posts/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
+app.listen(3000, function(){
+   console.log("Server is good");
 });
