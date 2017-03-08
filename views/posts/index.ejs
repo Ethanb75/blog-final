@@ -1,25 +1,41 @@
 <% include ../partials/header %> 
+ <?xml version="1.0" encoding="utf-8"?>
+    <svg class="diagonal" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
+            <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
+            </pattern>
+        </defs>
+        <path d="M 0 500 L 1000 400 L 1000 0 L 0 0 L 0 500 Z" style="stroke: transparent; fill: #D32F2F;"/>
+    </svg>
+ 
  <div class="container">
-     <header class="jumbotron">
-         <div class="container">
-             <h1>Welcome To The Boiler</h1>
-             <p>View our hand-picked posts from all over the world</p>
-             <p>
-                <a class="btn btn-primary btn-large" href="/posts/new">New Post</a>
-             </p>
+     <header class="row head-container">
+         
+         <div class="col-sm-offset-1 col-sm-10">
+            <p class="welcome">
+                welcome to
+            </p>
+             <h1>Ryan's Blog</h1>
+             
+                <a href="/posts/new" class="btn btn-primary">Make a Post</a>
+           
          </div>
      </header>
      
-     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+     <div class="row" style="display:flex; flex-wrap: wrap;">
         <% posts.forEach(function(post){ %>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-sm-offset-1 col-sm-10">
                 <div class="thumbnail">
                    <img src="<%= post.image %>">
                    <div class="caption">
                        <h4><%= post.name %></h4>
                    </div>
                    <p>
-                       <a href="/posts/<%= post._id %>" class="btn btn-primary">More Info</a>
+                       <%- post.body.substring(0,300) %> . . .
+                   </p>
+                   <p>
+                       <a href="/posts/<%= post._id %>" class="btn btn-primary">Read More</a>
                    </p>
                 </div>
             </div>
