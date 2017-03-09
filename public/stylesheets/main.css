@@ -26,6 +26,7 @@ p > .btn {
     background-color: transparent;
     opacity: 0;
     animation: fadout 3s ease;
+    color: rgb(51,51,51);
 }
 .flash-messages {
     position: absolute;
@@ -102,7 +103,13 @@ form > .input-group:nth-of-type(2){
 }
 .fa-coffee {
     margin: 4px 0px 4px 8px;
-    color: rgb(51,51,51);
+    /*color: rgb(51,51,51);*/
+}
+.fa {
+    color: whitesmoke;
+}
+.btn-primary:active:focus {
+    background-color: #FF8A80;
 }
 .navbar-header > .navbar-toggle {
     margin: 4px 8px 4px 0px;
@@ -113,8 +120,24 @@ form > .input-group:nth-of-type(2){
     position: relative;
     top: 30vh;
 }
-
-
+/*Show style*/
+.thumbnail-show {
+    margin-top: 16px;
+}
+.caption-full hr {
+    margin-right: 50%;
+    border-top: 1px solid #D32F2F;
+}
+.caption-full .body {
+    text-align: justify;
+    padding: .6rem;
+    line-height: 1.8;
+}
+.body::first-letter {
+    font-size: 48px;
+    font-style: italic;
+    line-height: 1;
+}
 /*Animations*/
 @keyframes fadout {
     0% {
@@ -126,7 +149,7 @@ form > .input-group:nth-of-type(2){
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .head-container {
-        margin: 2.5rem auto;
+        margin: 5rem auto;
     }
     .head-container h1 {
         font-size: 40px;
@@ -139,5 +162,8 @@ form > .input-group:nth-of-type(2){
     }
     body {
         margin-bottom: 50px;
+    }
+    .login-form {
+        width: 80%;
     }
 }

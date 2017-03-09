@@ -2,16 +2,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="thumbnail">
+            <div class="thumbnail thumbnail-show">
                 <img class="image-responsive" src="<%= post.image %>">
                 <div class="caption-full">
-                    <h4><a><%=post.name%></a></h4>
-                    <p>
-                        <%= post.body %>
-                    </p>
-                    <p>
+                    <h3><%=post.name%></h3>
+                     <p>
                         <em>Submitted by: <%= post.author.username %></em>
                     </p>
+                    <hr>
+                    <p class="body">
+                        <%= post.body %>
+                    </p>
+                   
                     <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
                         <a href="/posts/<%= post._id %>/edit" class="btn btn-warning">Edit</a>
                         <form class="deleteForm" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
