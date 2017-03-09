@@ -4,14 +4,19 @@
 p > .btn {
     /*margin: 9px;*/
 }
-.head-container .btn-primary {
+.head-container h1 {
+    font-size: 72px;
+}
+.head-container .btn-primary, p > .btn.btn-primary {
     border: none;
     background-color: #FF8A80;
     position: relative;
+    transition: box-shadow .4s ease;
 }
-.head-container .btn-primary:hover {
+.head-container .btn-primary:hover, p > .btn.btn-primary:hover {
     top: -1px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: box-shadow .4s ease;
 }
 .thumbnail > p {
     padding: 9px;
@@ -87,6 +92,21 @@ form > .input-group:nth-of-type(2){
     top: 0;
     
 }
+/*responsive button styling*/
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+.navbar-toggle, .navbar-default .navbar-toggle {
+    border: none;
+}
+.fa-coffee {
+    margin: 4px 0px 4px 8px;
+    color: rgb(51,51,51);
+}
+.navbar-header > .navbar-toggle {
+    margin: 4px 8px 4px 0px;
+}
 
 /*Login Style*/
 .login-container {
@@ -102,5 +122,22 @@ form > .input-group:nth-of-type(2){
     }
     100% {
         opacity: 0;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .head-container {
+        margin: 2.5rem auto;
+    }
+    .head-container h1 {
+        font-size: 40px;
+    }
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    body {
+        margin-bottom: 50px;
     }
 }
