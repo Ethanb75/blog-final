@@ -12,24 +12,24 @@
  <div class="container">
      <header class="row head-container">
          
-         <div class="col-sm-offset-1 col-sm-10">
+         <div class="col-sm-offset-1 col-sm-10 text-center">
             <p class="welcome">
-                welcome to
+                <small>welcome to</small>
             </p>
-             <h1>Ryan's Blog</h1>
-             
-                <a href="/posts/new" class="btn btn-primary">Make a Post</a>
-           
+            <h1 style="font-family: 'Slabo 27px'" class>Ryan's Blog</h1>
+            <a href="/posts/new" class="btn btn-primary">Recent Post</a>
          </div>
      </header>
-     
+     <div class="row">
+         <em class="minor" style="position: absolute">Recent</em>
+     </div>
      <div class="row" style="display:flex; flex-wrap: wrap;">
         <% posts.forEach(function(post){ %>
             <div class="col-sm-offset-1 col-sm-10">
                 <div class="thumbnail">
                    <img src="<%= post.image %>">
                    <div class="caption">
-                       <h4><%= post.name %></h4>
+                       <h4 style="color: #D32F2F"><%= post.name %></h4>
                    </div>
                    <p>
                        <%- post.body.substring(0,300) %> . . .
