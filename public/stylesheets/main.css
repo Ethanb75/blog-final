@@ -1,3 +1,8 @@
+/*
+*TODO:
+*--------------------
+* Migrate styles to individual files
+*/
 /*body {*/
 /*    background-image: url("images/overlay.png"), linear-gradient(180deg, #3D9951 15%, #184D24 85%);*/
 /*}*/
@@ -15,7 +20,7 @@ p > .btn {
     transition: box-shadow .4s ease;
 }
 .head-container .btn-primary:hover, p > .btn.btn-primary:hover {
-    top: -1px;
+    transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transition: box-shadow .4s ease;
 }
@@ -120,6 +125,18 @@ form > .input-group:nth-of-type(2){
     margin: 4px 8px 4px 0px;
 }
 
+/*Footer Style*/
+.footer {
+    background: #D32F2F;
+    color: whitesmoke;
+}
+.footer > p {
+    margin: 0;
+    padding: 2rem 2rem;
+}
+.footer span {
+    float: right
+}
 /*Login Style*/
 .login-container {
     position: relative;
