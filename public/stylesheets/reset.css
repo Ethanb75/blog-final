@@ -1,0 +1,13 @@
+a {
+    color: rgba(0,0,0,.5);
+}
+a:hover {
+    /*color: #696659;*/
+    color: #ADABA8;
+}
+.adminNav {
+    background-color: #ADABA8;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}

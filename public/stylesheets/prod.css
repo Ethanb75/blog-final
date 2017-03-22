@@ -1,0 +1,239 @@
+@import "./nav.css";
+@import "./reset.css";
+/*article label colors*/
+/*todo: implement tags so that new posts can incorporate them */
+.movie {
+  background-color: #e67e22; 
+}
+.health {
+  background-color: #2ecc71; 
+}
+.pirate {
+  background-color: #2c3e50; 
+}
+.sass {
+  background-color: #e74c3c;
+}
+.code {
+  background-color: #8e44ad; 
+}
+/*nav colors*/
+.marg-2 {
+    margin: 2rem auto;
+}
+.me-pixelized {
+    width: 5rem;
+    max-width: 100px;
+    /*margin-bottom: .5rem;*/
+}
+.footer {
+    margin-top: 5rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(10,10,10,.2);
+}
+.footer span {
+    float: right;
+}
+.content {
+    padding: 0rem 3rem;
+}
+.divider-line {
+    margin: 2.5rem;
+    text-align: center;
+}
+.divider-line span {
+    background: #fff;
+    bottom: -1rem;
+    position: relative;
+    padding: .4rem;
+}
+
+.ghost {
+  margin-bottom: 0;
+  background-color: #34495e;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3 ease-out;
+  color: #fff; 
+}
+.ghost:hover {
+    background-color: #fff;
+    color: #34495e;
+    transition: 0.2 ease; 
+}
+.row.full {
+  max-width: 100%; 
+}
+.sidebar {
+  display: inline-block;
+  background-color: #4C5E61; 
+}
+  .sidebar h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800; 
+}
+  .sidebar h2 {
+    font-weight: 300;
+    color: #B0CADB; 
+}
+
+.middle-header {
+  text-align: center; 
+}
+
+@media only screen and (min-width: 64.063em) {
+    .nav-button {
+        display: block;
+        border-top: 1px solid whitesmoke;
+    }
+    .nav-button:first-of-type {
+        margin-top: 2rem;
+    }
+    .nav-button:last-of-type {
+        border-bottom: 1px solid whitesmoke;
+    }
+    .nav-contact {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid whitesmoke;
+
+    }
+    .sidebar {
+        position: fixed;
+        background-color: #4C5E61;
+        top: 0;
+        bottom: 0; 
+    }
+    .sidebar h1 {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 800; 
+    }
+    .sidebar h2 {
+        font-weight: 300;
+        color: #B0CADB; 
+    }
+    .middle-header {
+        /*text-align: right;*/
+        text-align: center;
+        position: relative;
+        margin-top: 10vh;
+        /*top: 50%;*/
+    } 
+}
+
+
+.one-liner {
+    margin-top: 1.0rem;
+    margin-bottom: 1.5rem;
+    color: rgba(235,235,235,.3);
+}
+.one-liner::before {
+    content: '"';
+    font-size: 2rem;
+}
+.one-liner::after {
+    content: '"';
+    font-size: 2rem;
+}
+.left {
+    float: left;
+}
+/* adds a margin to the header regardless */
+.middle-header {
+    margin-top: 5vw;
+}
+.article-break {
+    width: 50%;
+    margin: 2.5rem auto;
+}
+.content img {
+  width: 400px; 
+}
+.content img.author {
+  float: right;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px; 
+}
+.content h2 {
+  margin-top: 1.25rem;
+  font-weight: 800; 
+}
+.content h4 {
+  border-bottom: 1px solid rgba(10,10,10,.1);
+  text-transform: uppercase;
+  color: rgba(10,10,10,.2);
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em; 
+}
+
+.social-header i {
+  font-size: 3rem;
+  color: #fff;
+  margin: 10px 15px; }
+  .social-header i:hover {
+    transform: scale(1.5);
+    transition: .6s ease-in-out; 
+}
+/*animation classes*/
+.bounce-infinite {
+     transition: .5s ease;
+}
+.bounce-left-infinite {
+    transition: .5s ease;
+}
+.bounce-left-infinite:hover {
+    animation: .8s ease-in-out infinite .1s reverse bounce-left;
+}
+.bounce-infinite:hover {
+    /*transition: .8s ease;*/
+    animation: .8s ease-in-out infinite .1s reverse bounce;
+}
+.bounce-right-infinite {
+    transition: .5s ease;
+}
+.bounce-right-infinite:hover {
+    animation: .8s ease-in-out infinite .1s reverse bounce-right;
+}
+
+/*Animations*/
+@keyframes fadout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes bounce {
+    0% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+}
+@keyframes bounce-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(6px);
+    }
+}
+@keyframes bounce-left {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-6px);
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /**/
+}

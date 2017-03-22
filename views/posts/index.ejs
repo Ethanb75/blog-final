@@ -1,43 +1,94 @@
 <% include ../partials/header %> 
- <?xml version="1.0" encoding="utf-8"?>
-    <svg class="diagonal" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <pattern id="pattern-0" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
-            <path d="M 0 0 L 50 0 L 50 100 L 0 100 Z" style="fill: black;"/>
-            </pattern>
-        </defs>
-        <path d="M 0 1000 L 1000 1000 L 1000 0 L 0 0 L 0 1000 Z" style="stroke: transparent; fill: #D32F2F;"/>
-    </svg>
- 
- <div class="container">
-     <header class="row head-container">
-         
-         <div class="col-sm-offset-1 col-sm-10 text-center">
-            <p class="welcome">
-                <small>welcome to</small>
+
+
+<!-- May not need foundation icons -->
+<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">-->
+
+    <!-- below is sidebar content -->
+    <div class="row full">
+      <div class="sidebar medium-12 large-3 columns">
+        <div class="middle-header"> 
+          <img class="me-pixelized" src="/mePixel.png" alt="">
+          <h1>Ethans cool Blog</h1>
+          <em id="oneLiner" class="one-liner" style="display: block"></em>
+          <a href="#" class="nav-button">About</a>
+          <a href="#" class="nav-button nav-contact">Contact</a>
+          <a href="#" class="nav-button">Projects</a>
+          <div class="social-header">
+            <a href="#"><i class="fi-social-facebook"></i></a>
+            <a href="#"><i class="fi-social-medium"></i></a>
+            <a href="#"><i class="fi-social-rdio"></i></a>
+          </div>
+        </div> 
+        <!-- end left sidebar content -->
+
+      </div>
+      <div class="content medium-12 large-9 columns">
+        <h4 class="divider-line"><span>Pinned Post</span></h4>
+        <article class="post">
+          <h2>Learning jQuery In 10 Minutes</h2>
+          <p class="subheader">By <a href="#">Jarvis Hendrix</a> under <a href="#"><span class="label">JavaScript</span></a> <a href="#"><span class="alert label">jQuery</span></a></p>
+          <p>There's a lot more to learn about building web sites and applications with jQuery than can fit in API documentation. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eum necessitatibus non pariatur accusamus nobis iure maxime, doloribus impedit voluptas error provident laboriosam, quam ea neque autem architecto voluptatem nostrum.</p>
+          <a href="#" class="button bounce-right-infinite">Read it &rarrlp;</a>
+        </article>
+
+        <h4 class="divider-line"><span>Recent Posts</span></h4>
+        <% posts.forEach(function(post, index){ %>         
+            <% if(posts.length === (index + 1)) { %>
+                <article class="post">
+                <h2><%= post.name %></h2>
+                <a href="/posts/<%= post._id %>" class="th"><img alt="funny but true comic" src="<%= post.image %>"></a>
+                <p class="subheader">
+                  By <a href="#"><%= post.author.username %></a> under <a href="#"><span class="code label">Code</span></a> <a href="#"><span class="sad-panda label">Sad Panda</span></a>
+                </p>
+                <p class="subheader"><em><%- post.date.getMonth() + 1 %>/<%- post.date.getDate() %>/<%- post.date.getFullYear() %></em></p>
+                <p><%- post.body.substring(0,300) %> . . .</p>
+                <a href="/posts/<%= post._id %>" class="ghost button bounce-right-infinite">Read it &rarrlp;</a>
+            </article>
+            <% } else { %>
+            <article class="post">
+                <h2><%= post.name %></h2>
+                <a href="/posts/<%= post._id %>" class="th"><img alt="funny but true comic" src="<%= post.image %>"></a>
+                <p class="subheader">
+                  By <a href="#"><%= post.author.username %></a> under <a href="#"><span class="code label">Code</span></a> <a href="#"><span class="sad-panda label">Sad Panda</span></a>
+                </p>
+                <p class="subheader"><em><%- post.date.getMonth() %> / <%- post.date.getDate() %></em></p>
+                <p><%- post.body.substring(0,300) %> . . .</p>
+                <a href="/posts/<%= post._id %>" class="ghost button bounce-right-infinite">Read it &rarrlp;</a>
+            </article>
+            <hr class="article-break">
+            <% } %>
+        <% }) %>
+        <footer class="footer">
+            <p>
+                Home | About | Contact
+                <span>Copywrite</span>
             </p>
-            <h1 style="font-family: 'Slabo 27px'" class>Ryan's Blog</h1>
-            <a href="/posts/new" class="btn btn-primary">Recent Post</a>
-         </div>
-     </header>
-     <div class="row" style="display:flex; flex-wrap: wrap;">
-        <% posts.forEach(function(post){ %>
-            <div class="col-sm-offset-1 col-sm-10">
-                <div class="thumbnail">
-                   <img src="<%= post.image %>">
-                   <div class="caption">
-                       <h4 style="color: #D32F2F"><%= post.name %></h4>
-                   </div>
-                   <p>
-                       <%- post.body.substring(0,300) %> . . .
-                   </p>
-                   <p>
-                       <a href="/posts/<%= post._id %>" class="btn btn-primary">Read More</a>
-                   </p>
-                </div>
-            </div>
-        <% }); %>
+        </footer>
+      </div>
     </div>
-</div>
+
+    <script type="text/javaScript">
+    const oneLiners = [
+      "fresh squeezed content",
+      "more cowbell",
+      "limit one per household",
+      "while supplies last",
+      "'Objectively'",
+      "Gaben's Favorite Website",
+      "Dance the night away",
+      "just add water",
+      "come on in the water's fine",
+      "gluten free",
+      "one size fits all",
+      "now with <em>Codervision</em>"
+    ];
+    (function(){
+      let oneLiner = document.getElementById("oneLiner");
+      let seed = Math.floor(Math.random() * oneLiners.length);
+      oneLiner.innerHTML = oneLiners[seed];
+      console.log(seed);
+    }());
+    </script>
 
 <% include ../partials/footer %>

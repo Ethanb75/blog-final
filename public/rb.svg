@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Archivo+Black:400|Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);</style>
-  </defs>
-  <text x="315.057" y="431.727" style="font-size: 1px; white-space: pre;">R</text>
-  <text x="44.418" y="53.526" style="font-family: &quot;Archivo Black&quot;; font-size: 70px; white-space: pre;">R</text>
-  <text x="-55.473" y="53.526" style="font-family: &quot;Archivo Black&quot;; font-size: 70px; white-space: pre;" transform="matrix(-1, 0, 0, 1, 0, 0)">B</text>
-</svg>

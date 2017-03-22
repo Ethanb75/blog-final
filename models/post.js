@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var postSchema = new mongoose.Schema({
    name: String,
    image: String,
+   date: { type: Date },
    body: String,
    author: {
         id: {
@@ -12,6 +13,7 @@ var postSchema = new mongoose.Schema({
         },
         username: String
     },
+    tags: [],
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,

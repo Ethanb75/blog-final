@@ -1,0 +1,10 @@
+.nav-contact {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+}
+.nav-button {
+    box-sizing: border-box;
+    padding: 1.2rem;
+}
+@media only screen and (min-width: 64.063em) {
+}

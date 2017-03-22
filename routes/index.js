@@ -3,7 +3,7 @@ var express     = require("express"),
     passport    = require('passport'),
     User        = require('../models/user');
 router.get("/", function(req, res){
-    res.render("landing");
+    res.redirect("/posts");
 });
 //Authentication Routes
 //show register form

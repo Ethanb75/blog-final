@@ -4,6 +4,11 @@ var router = express.Router();
 var Post   = require("../models/post");
 var middleware = require("../middleware");
 
+//SEED DB
+// Post.create({
+//     name: "A Great Blog Post"
+// })
+
 //INDEX - show all Posts
 router.get("/", function(req, res){
     // Get all Posts from DB
@@ -19,6 +24,8 @@ router.get("/", function(req, res){
 //CREATE - add new post to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
     // get data from form and add to posts array
+    var date = new Date();
+    var strDate = date.getTime();
     var name = req.body.name;
     var image = req.body.image;
     var body = req.body.body;
@@ -26,7 +33,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
       id: req.user._id,
       username: req.user.username
     };
-    var newPost = {name: name, image: image, body: body, author: author};
+    var newPost = {name: name, image: image, body: body, author: author, date: strDate};
     // Create a new post and save to DB
     Post.create(newPost, function(err, newlyCreated){
         if(err){
