@@ -208,6 +208,12 @@
 .bounce-right-infinite:hover {
     animation: .8s ease-in-out infinite .1s reverse bounce-right;
 }
+.slide-down-end {
+    display: none;
+}
+.slide-down {
+    animation: 1s ease-in-out slideDown;
+}
 
 /*Animations*/
 @keyframes fadout {
@@ -240,6 +246,20 @@
     }
     50% {
         transform: translateX(-6px);
+    }
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {transform: translateY(6rem);}
+    60% {transform: translateY(14rem);}
+    70% {transform: translateY(18rem);}
+    800% {transform: translateY(19.5rem);}
+    100% {
+        transform: translateY(20rem);
+        opacity: 0;
     }
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

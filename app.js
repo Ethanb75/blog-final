@@ -12,6 +12,7 @@ var express        = require("express"),
     
 var commentRoutes = require("./routes/comments"),
     postRoutes = require("./routes/posts"),
+    searchRoutes = require("./routes/search"),
     indexRoutes = require("./routes/index");
     
 
@@ -54,6 +55,7 @@ app.use(function(req,res,next){
 });
 
 app.use(indexRoutes);
+app.use("/search", searchRoutes);
 app.use("/posts", postRoutes);
 app.use("/posts/:id/comments", commentRoutes);
 
