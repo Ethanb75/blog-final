@@ -13,7 +13,6 @@ var postSchema = new mongoose.Schema({
         },
         username: String
     },
-    tags: [],
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,

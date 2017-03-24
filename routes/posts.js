@@ -33,6 +33,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
       id: req.user._id,
       username: req.user.username
     };
+    console.log(req.body);
     var newPost = {name: name, image: image, body: body, author: author, date: strDate};
     // Create a new post and save to DB
     Post.create(newPost, function(err, newlyCreated){

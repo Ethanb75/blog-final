@@ -15,6 +15,7 @@
           <a href="#" class="nav-button nav-contact">Contact</a>
           <a href="#" class="nav-button">Projects</a>
           <div class="social-header">
+          <input id="searchBar" type="text"></input>
             <a href="#"><i class="fi-social-facebook"></i></a>
             <a href="#"><i class="fi-social-medium"></i></a>
             <a href="#"><i class="fi-social-rdio"></i></a>
@@ -39,7 +40,7 @@
                 <h2><%= post.name %></h2>
                 <a href="/posts/<%= post._id %>" class="th"><img alt="funny but true comic" src="<%= post.image %>"></a>
                 <p class="subheader">
-                  By <a href="#"><%= post.author.username %></a> under <a href="#"><span class="code label">Code</span></a> <a href="#"><span class="sad-panda label">Sad Panda</span></a>
+                  By <a href="#"><%= post.author.username %></a> 
                 </p>
                 <p class="subheader"><em><%- post.date.getMonth() + 1 %>/<%- post.date.getDate() %>/<%- post.date.getFullYear() %></em></p>
                 <p><%- post.body.substring(0,300) %> . . .</p>
@@ -50,9 +51,9 @@
                 <h2><%= post.name %></h2>
                 <a href="/posts/<%= post._id %>" class="th"><img alt="funny but true comic" src="<%= post.image %>"></a>
                 <p class="subheader">
-                  By <a href="#"><%= post.author.username %></a> under <a href="#"><span class="code label">Code</span></a> <a href="#"><span class="sad-panda label">Sad Panda</span></a>
+                  By <a href="#"><%= post.author.username %></a>
                 </p>
-                <p class="subheader"><em><%- post.date.getMonth() %> / <%- post.date.getDate() %></em></p>
+                <p class="subheader"><em><%- post.date.getMonth() %>/<%- post.date.getDate() %>/<%- post.date.getFullYear() %></em></p>
                 <p><%- post.body.substring(0,300) %> . . .</p>
                 <a href="/posts/<%= post._id %>" class="ghost button bounce-right-infinite">Read it &rarrlp;</a>
             </article>
@@ -61,8 +62,8 @@
         <% }) %>
         <footer class="footer">
             <p>
-                Home | About | Contact
-                <span>Copywrite</span>
+              <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+              <span>Copywrite</span>
             </p>
         </footer>
       </div>
@@ -74,20 +75,45 @@
       "more cowbell",
       "limit one per household",
       "while supplies last",
-      "'Objectively'",
-      "Gaben's Favorite Website",
-      "Dance the night away",
+      "'objectively'",
+      "Gaben's favorite website",
+      "dance the night away",
       "just add water",
+      "these boots were made for inclusive design",
       "come on in the water's fine",
       "gluten free",
       "one size fits all",
-      "now with <em>Codervision</em>"
+      "now with less sodium",
+      "take twice a day with coffee",
+      "please read responsibly",
+      "organically grown",
+      "greetings from down under",
+      "Bill and Ted's bogus bug solution",
+      "omit that last message, this is the real message",
+      "praise the sun!",
+      "Coming Soon: less bugs",
+      "leave your shoes at the door",
+      "keeping keyboards clean since 1995",
+
+      "now with: <em>Codervision &#8482</em>"
     ];
     (function(){
       let oneLiner = document.getElementById("oneLiner");
       let seed = Math.floor(Math.random() * oneLiners.length);
       oneLiner.innerHTML = oneLiners[seed];
-      console.log(seed);
+    }());
+    (function(){
+      console.log(window.innerHeight);
+      window.addEventListener("scroll",function(){
+        console.log(window.scrollY);
+      })
+    }());
+    (function(){
+      const $search = document.getElementById("searchBar");
+      $search.addEventListener("input",function(){
+        console.log($search.value);
+        console.log(posts)
+      })
     }());
     </script>
 

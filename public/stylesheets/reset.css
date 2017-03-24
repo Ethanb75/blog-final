@@ -1,7 +1,7 @@
 a {
     color: rgba(0,0,0,.5);
 }
-a:hover {
+a:hover, a:focus {
     /*color: #696659;*/
     color: #ADABA8;
 }

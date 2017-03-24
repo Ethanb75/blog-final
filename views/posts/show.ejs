@@ -9,8 +9,8 @@
             <em>Submitted by: <%= post.author.username %></em>
         </p>
         <hr>
-        <p>
-            <%= post.body %>
+        <p class="body-type">
+            <%- post.body %>
         </p>
         
         <% if(currentUser && post.author.id.equals(currentUser._id)){ %>

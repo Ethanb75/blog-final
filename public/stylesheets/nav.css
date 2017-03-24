@@ -1,10 +1,15 @@
 .nav-contact {
-    border-left: 1px solid whitesmoke;
-    border-right: 1px solid whitesmoke;
+    border-left: 1px solid rgba(240,240,240,.5);
+    border-right: 1px solid rgba(240,240,240,.5);
 }
 .nav-button {
     box-sizing: border-box;
     padding: 1.2rem;
+    transition: background .2s ease;
+}
+.nav-button:hover, .nav-button:focus {
+    background-color: rgba(240,240,240,.2);
+    transition: background .2s ease;
 }
 @media only screen and (min-width: 64.063em) {
 }

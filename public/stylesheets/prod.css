@@ -17,6 +17,13 @@
 .code {
   background-color: #8e44ad; 
 }
+.body-type {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -.004em;
+    text-rendering: optimizeLegibility;
+}
 /*nav colors*/
 .marg-2 {
     margin: 2rem auto;
@@ -86,19 +93,20 @@
 @media only screen and (min-width: 64.063em) {
     .nav-button {
         display: block;
-        border-top: 1px solid whitesmoke;
+        border-top: 1px solid rgba(240,240,240,.5);
+        margin-left: -.9375rem;
+        margin-right: -.9375rem;
     }
     .nav-button:first-of-type {
         margin-top: 2rem;
     }
     .nav-button:last-of-type {
-        border-bottom: 1px solid whitesmoke;
+        border-bottom: 1px solid rgba(240,240,240,.5);
     }
     .nav-contact {
         border-left: none;
         border-right: none;
-        border-top: 1px solid whitesmoke;
-
+        border-top: 1px solid rgba(240,240,240,.5);
     }
     .sidebar {
         position: fixed;
