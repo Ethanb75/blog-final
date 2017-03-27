@@ -107,6 +107,7 @@
         border-left: none;
         border-right: none;
         border-top: 1px solid rgba(240,240,240,.5);
+        padding: 0rem 1.2rem;
     }
     .sidebar {
         position: fixed;
