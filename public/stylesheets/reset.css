@@ -1,3 +1,10 @@
+.adminNav {
+    background-color: #ADABA8;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+/*Foundation overwrites*/
 a {
     color: rgba(0,0,0,.5);
 }
@@ -5,9 +12,24 @@ a:hover, a:focus {
     /*color: #696659;*/
     color: #ADABA8;
 }
-.adminNav {
-    background-color: #ADABA8;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem;
+    padding: .85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-size: .9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #AD726A;
+    color: #fefefe;
+}
+.button:hover {
+    background-color: #FA6558;
+    color: #fefefe;
 }

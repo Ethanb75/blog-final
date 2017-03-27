@@ -1,3 +1,4 @@
+(function(){
 const oneLiners = [
       "fresh squeezed content",
       "more cowbell",
@@ -44,23 +45,42 @@ const oneLiners = [
     // window.scrollTo(0,500);
     (function(){
       let $contactBtn = document.getElementById("cnt");
+      let $contactPage = document.getElementById("Contact");
       let $faders = document.getElementById("faders");
-      let prevClasses = $contactBtn.getAttribute("class");
-      let fadersObjects = $faders.children;
 
       $contactBtn.addEventListener("click", function(e){
             e.preventDefault();
-            console.log(fadersObjects.length);
-            for(let i = 0; i < fadersObjects.length;i++ ){
-                let prevClasses = fadersObjects[i].getAttribute("class");
-                fadersObjects[i].addEventListener("animationend", function(){
-                    fadersObjects[i].setAttribute("class", prevClasses + " slide-down-end")
-                })
-                fadersObjects[i].setAttribute("class", prevClasses + " slide-down");
-            }
-            // $contactBtn.setAttribute("class", prevClasses + " slide-down");
+            console.log($contactPage)
+            fadeCurrentShowNext($faders,$contactPage);
+
+
+
+
+
+            // for(let i = 0; i < fadersObjects.length;i++ ){
+            //     let prevClasses = fadersObjects[i].getAttribute("class");
+            //     fadersObjects[i].addEventListener("animationend", function(){
+            //         fadersObjects[i].setAttribute("class", prevClasses + " hidden")
+            //     })
+            //     fadersObjects[i].setAttribute("class", prevClasses + " slide-down");
+            // }
+            // $contactPage.setAttribute("class","content medium-12 large-9 columns");
         });
-        // $contactBtn.addEventListener("animationend", function(){
-            // $contactBtn.setAttribute("class", prevClasses);
-        // });
     }());
+    //takes old selection, applies fade to child elements, but doesn't apply to items already hidden. on animation end removes classes and sets to just hidden
+    //takes 'nextSelector' and adds fades down, after sets classes 
+    const fadeCurrentShowNext = function(pastSelector, nextSelector) {
+        let pastObj = pastSelector.children;
+        for(let i = 0; i < pastObj.length; i++) {
+                let prevClasses = pastObj[i].getAttribute('class');
+                if(prevClasses.includes("hidden") === false) {
+                    console.log('should be 7 of these');
+                    pastObj[i].addEventListener("animationend", function(){
+                        pastObj[i].setAttribute("class", prevClasses + " hidden")
+                    });
+            }
+            pastObj[i].setAttribute("class", prevClasses + " slide-down");
+        }
+        nextSelector.setAttribute("class","content small-12 columns");
+    }
+}());

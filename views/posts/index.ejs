@@ -43,7 +43,7 @@
                 </p>
                 <p class="subheader"><em><%- post.date.getMonth() + 1 %>/<%- post.date.getDate() %>/<%- post.date.getFullYear() %></em></p>
                 <p><%- post.body.substring(0,300) %> . . .</p>
-                <a href="/posts/<%= post._id %>" class="ghost button bounce-right-infinite">Read it &rarrlp;</a>
+                <a href="/posts/<%= post._id %>" class="button bounce-right-infinite">Read it &rarrlp;</a>
             </article>
             <% } else { %>
             <article class="post">
@@ -54,7 +54,7 @@
                 </p>
                 <p class="subheader"><em><%- post.date.getMonth() %>/<%- post.date.getDate() %>/<%- post.date.getFullYear() %></em></p>
                 <p><%- post.body.substring(0,300) %> . . .</p>
-                <a href="/posts/<%= post._id %>" class="ghost button bounce-right-infinite">Read it &rarrlp;</a>
+                <a href="/posts/<%= post._id %>" class="button bounce-right-infinite">Read it &rarrlp;</a>
             </article>
             <hr class="article-break">
             <% } %>
@@ -65,6 +65,14 @@
               <span>Copywrite</span>
             </p>
         </footer>
+        <div id="Contact" class="content hidden">
+          <h1>
+            About
+          </h1>
+          <p>
+            ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam incidunt magni quaerat assumenda voluptas repellat doloremque laboriosam voluptate odio esse voluptatem neque iste sit quibusdam aperiam doloribus, deleniti quidem soluta.
+          </p>
+        </div><!-- hidden contact page module -->
       </div>
     </div>
 

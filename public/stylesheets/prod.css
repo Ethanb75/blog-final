@@ -208,7 +208,7 @@
 .bounce-right-infinite:hover {
     animation: .8s ease-in-out infinite .1s reverse bounce-right;
 }
-.slide-down-end {
+.hidden {
     display: none;
 }
 .slide-down {
