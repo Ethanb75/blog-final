@@ -42,7 +42,7 @@
     float: right;
 }
 .content {
-    padding: 0rem 3rem;
+    padding: 0rem 1.4rem;
 }
 .divider-line {
     margin: 2.5rem;
@@ -114,6 +114,9 @@
         background-color: #4C5E61;
         top: 0;
         bottom: 0; 
+    }
+    .content {
+        padding: 0rem 3rem;
     }
     .sidebar h1 {
         color: #fff;
@@ -215,8 +218,28 @@
 .slide-down {
     animation: 1s ease-in-out slideDown;
 }
+.slide-pop-d2 {
+    animation: 1.5s ease slide-pop;
+}
+.slide-pop-d1 {
+    animation: 1s ease slide-pop;
+}
+.slide-pop {
+    animation: .5s ease slide-pop;
+}
 
 /*Animations*/
+@keyframes slide-pop {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @keyframes fadout {
     0% {
         opacity: 1;
