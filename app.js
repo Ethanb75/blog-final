@@ -15,7 +15,6 @@ var commentRoutes = require("./routes/comments"),
     searchRoutes = require("./routes/search"),
     indexRoutes = require("./routes/index");
     
-
 //dev db is local, production db is an mlab server
 var url = process.env.DATABASEURL || "mongodb://Ethan:fuck@ds121190.mlab.com:21190/ethans_blog";
 mongoose.connect(url, function(err){
@@ -58,6 +57,8 @@ app.use(indexRoutes);
 app.use("/search", searchRoutes);
 app.use("/posts", postRoutes);
 app.use("/posts/:id/comments", commentRoutes);
+
+
 
 app.listen(3000, function(){
    console.log("Server is good");
