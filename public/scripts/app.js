@@ -1,3 +1,4 @@
+// import swipe from './swipe';
 (function(){
 const oneLiners = [
       "fresh squeezed content",
@@ -50,6 +51,7 @@ const oneLiners = [
 
       $contactBtn.addEventListener("click", function(e){
             e.preventDefault();
+            e.stopPropagation();
             console.log($contactPage)
             fadeCurrentShowNext($faders,$contactPage);
 
@@ -74,13 +76,12 @@ const oneLiners = [
         for(let i = 0; i < pastObj.length; i++) {
                 let prevClasses = pastObj[i].getAttribute('class');
                 if(prevClasses.includes("hidden") === false) {
-                    console.log('should be 7 of these');
                     pastObj[i].addEventListener("animationend", function(){
                         pastObj[i].setAttribute("class", prevClasses + " hidden")
                     });
             }
             pastObj[i].setAttribute("class", prevClasses + " slide-down");
         }
-        nextSelector.setAttribute("class","content small-12 columns");
+        nextSelector.setAttribute("class","content small-12 columns slide-pop");
     }
 }());
