@@ -291,8 +291,13 @@
         opacity: 0;
     }
 }
-@media only screen and (min-device-width : 300px) {
+@media only screen and (min-device-width : 320px) {
     .nav-button {
         padding: 1rem;
+    }
+}
+@media only screen and (min-device-width : 2800px) {
+    .nav-button {
+        padding: .5rem;
     }
 }
