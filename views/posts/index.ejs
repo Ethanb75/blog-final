@@ -12,9 +12,8 @@
           <h1 class="slide-pop">Ethans cool Blog</h1>
           <em id="oneLiner" class="one-liner slide-pop-d2" style="display: block"></em>
           <a href="/" id="abt" class="nav-button">Home</a>
-          <a href="#" id="abt" class="nav-button nav-lb">About</a>
-          <a href="#" id="cnt" class="nav-button nav-lb">Contact</a>
-          <a href="#" class="nav-button nav-lb">Projects</a>
+          <a href="/about" id="abt" class="nav-button nav-lb">About</a>
+          <a href="https://github.com/Ethanb75" class="nav-button nav-lb">Projects</a>
           <div class="space-2r"></div>
         </div> 
         <!-- end left sidebar content -->
@@ -23,10 +22,14 @@
       <div id="faders" class="content medium-12 large-9 columns">
         <h4 class="divider-line"><span>Pinned Post</span></h4>
         <article class="post">
-          <h2>Learning jQuery In 10 Minutes</h2>
-          <p class="subheader">By <a href="#">Jarvis Hendrix</a> under <a href="#"><span class="label">JavaScript</span></a> <a href="#"><span class="alert label">jQuery</span></a></p>
-          <p>There's a lot more to learn about building web sites and applications with jQuery than can fit in API documentation. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eum necessitatibus non pariatur accusamus nobis iure maxime, doloribus impedit voluptas error provident laboriosam, quam ea neque autem architecto voluptatem nostrum.</p>
-          <a href="#" class="button bounce-right-infinite">Read it &rarrlp;</a>
+        <h2><%= posts[posts.length - 1].name %></h2>
+          <a href="/posts/<%= posts[posts.length - 1]._id %>" class="th"><img alt="pinned post image" src="<%= posts[posts.length - 1].image %>"></a>
+          <p class="subheader">
+            By <a href="#"><%= posts[posts.length - 1].author.username %></a>
+          </p>
+          <p class="subheader"><em><%- posts[posts.length - 1].date.getMonth() + 1 %>/<%- posts[posts.length - 1].date.getDate() %>/<%- posts[posts.length - 1].date.getFullYear() %></em></p>
+          <p><%- posts[posts.length - 1].body.substring(0,300) %> . . .</p>
+          <a href="/posts/<%= posts[0]._id %>" class="button bounce-right-infinite">Read it &rarrlp;</a>
         </article>
 
         <h4 class="divider-line"><span>Recent Posts</span></h4>
@@ -58,7 +61,7 @@
         <% }) %>
         <footer class="footer">
             <p>
-              <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+              <a href="/">Home</a> | <a href="/about">About</a> | <a href="https://github.com/Ethanb75">Projects</a>
               <span>Copywrite</span>
             </p>
         </footer>

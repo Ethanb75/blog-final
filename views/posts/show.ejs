@@ -9,9 +9,9 @@
             <em>Submitted by: <%= post.author.username %></em>
         </p>
         <hr>
-        <p class="body-type">
+        <div class="body-type">
             <%- post.body %>
-        </p>
+        </div>
         
         <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
             <a href="/posts/<%= post._id %>/edit" class="left button tiny hollow">Edit</a>
@@ -43,7 +43,7 @@
     <a href="/posts" class="left marg-2 bounce-left-infinite"><span>&laquo</span> back</a>
         <footer class="footer">
             <p>
-                Home | About | Contact
+                <a href="/">Home</a> | <a href="/about">About</a> | <a href="https://github.com/Ethanb75">Projects</a>
                 <span>Copywrite</span>
             </p>
         </footer>

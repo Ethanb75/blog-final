@@ -17,14 +17,12 @@ const oneLiners = [
       "take twice a day with coffee",
       "please read responsibly",
       "organically grown",
-      "greetings from down under",
       "Bill and Ted's bogus bug solution",
       "omit that last message, this is the real message",
       "praise the sun!",
       "Coming Soon: less bugs",
       "leave your shoes at the door",
       "keeping keyboards clean since 1995",
-
       "now with: <em>Codervision &#8482</em>"
     ];
     const oneLiner = function(IdName){

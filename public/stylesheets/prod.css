@@ -1,5 +1,6 @@
-@import "./nav.css";
-@import "./reset.css";
+@import "./partials/nav.css";
+@import "./partials/reset.css";
+@import "./partials/login.css";
 /*article label colors*/
 /*todo: implement tags so that new posts can incorporate them */
 .movie {
@@ -16,6 +17,10 @@
 }
 .code {
   background-color: #8e44ad; 
+}
+.hr-break {
+    margin: 3rem auto;
+    width: 30%;
 }
 .body-type {
     font-family: Georgia, 'Times New Roman', Times, serif;

@@ -24,17 +24,18 @@ router.get("/", function(req, res){
 //CREATE - add new post to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
     // get data from form and add to posts array
-    var date = new Date();
-    var strDate = date.getTime();
-    var name = req.body.name;
-    var image = req.body.image;
-    var body = req.body.body;
-    var author = {
+    let date = new Date();
+    let strDate = date.getTime();
+    let name = req.body.name;
+    let image = req.body.image;
+    let body = req.body.body;
+    let tagArr = [];
+    req.body.forEach((el)=>{console.log(el)});
+    let author = {
       id: req.user._id,
       username: req.user.username
     };
-    console.log(req.body);
-    var newPost = {name: name, image: image, body: body, author: author, date: strDate};
+    let newPost = {name: name, image: image, body: body, author: author, date: strDate, tags: tagArr};
     // Create a new post and save to DB
     Post.create(newPost, function(err, newlyCreated){
         if(err){
