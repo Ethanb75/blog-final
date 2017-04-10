@@ -29,7 +29,7 @@
           </p>
           <p class="subheader"><em><%- posts[posts.length - 1].date.getMonth() + 1 %>/<%- posts[posts.length - 1].date.getDate() %>/<%- posts[posts.length - 1].date.getFullYear() %></em></p>
           <p><%- posts[posts.length - 1].body.substring(0,300) %> . . .</p>
-          <a href="/posts/<%= posts[0]._id %>" class="button bounce-right-infinite">Read it &rarrlp;</a>
+          <a href="/posts/<%= posts[posts.length - 1]" class="button bounce-right-infinite">Read it &rarrlp;</a>
         </article>
 
         <h4 class="divider-line"><span>Recent Posts</span></h4>
